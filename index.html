@@ -59,7 +59,7 @@
 			background-color: #04AA6D;
 		}
 
-		.dropbutton {
+		.button-rounded {
 			background-color: #0E3692;
 			border-radius: 10px;
 			color: white;
@@ -69,7 +69,7 @@
 			cursor: pointer;
 			transition-duration: 0.5s;
 		}
-/*
+
 		.dropdown-content {
 			display: none;
 			position: absolute;
@@ -87,10 +87,10 @@
 		}
 
 		.dropdown-content a:hover {background-color: #ddd;}
-		.dropdown:hover .dropbutton {background-color: #3e8e41;}
+		.dropdown:hover .button-rounded {background-color: #3e8e41;}
 		.dropdown:hover .dropdown-content {display: block;}
-*/
-		.dropbutton:hover {background-color: #04AA6D;}
+
+		.button-rounded:hover {background-color: #04AA6D;}
 
 		.image-container {
 			position: relative;
@@ -132,9 +132,18 @@
 				case 'srs.html':
 					document.title = 'SRS';
 					break;
+				case 'felhasznalo.html':
+					document.title = 'Felhasználói dokumentáció';
+					break;
+				case 'analizis.html':
+					document.title = 'Analízis modell';
+					break;
+				case 'rendszerterv.html':
+					document.title = 'Rendszertervezés';
+					break;
 				case 'szotar.html':
 					document.title = 'Szótár';
-					break;	
+					break;
 			}
 		}
 	</script>
@@ -161,15 +170,27 @@
 			</div>
 		</div>
 -->
-		<div><a href="#" onclick="load_content('munkanaplo.html')"><button class="dropbutton">Munkanapló</button></a></div>
+		<div><a href="#" onclick="load_content('munkanaplo.html')"><button class="button-rounded">Munkanapló</button></a></div>
 		<div class="btn-group">
 			<div><a href="#" onclick="load_content('projektterv.html')" class="button">H1</a></div>
 			<div><a href="#" onclick="load_content('vizio.html')" class="button">H2</a></div>
-			<div><a href="#" onclick="load_content('srs.html')" class="button">H3</a></div>
-			<div><button class="button">H4</button></div>
+			<div class="dropdown">
+				<button class="button">H3</button>
+				<div class="dropdown-content">
+					<a href="#" onclick="load_content('srs.html')">SRS</a>
+					<a href="#" onclick="load_content('felhasznalo.html')">Felhasználói dokumentáció</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="button">H4</button>
+				<div class="dropdown-content">
+					<a href="#" onclick="load_content('analizis.html')">Analízis modell</a>
+					<a href="#" onclick="load_content('rendszerterv.html')">Rendszertervezés</a>
+				</div>
+			</div>
 			<div><button class="button">H5</button></div>
 		</div>
-		<div><a href="#" onclick="load_content('szotar.html')"><button class="dropbutton">Szótár</button></a></div>
+		<div><a href="#" onclick="load_content('szotar.html')"><button class="button-rounded">Szótár</button></a></div>
 	</div>
 	<div class="child2" id="child2">
 		<h1>Üdvözöljük az EOF weboldalán! Az EOF csapat a Crafting Table&trade; nevű projektmunkát végzi.</h1>
